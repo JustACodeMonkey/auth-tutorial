@@ -30,10 +30,11 @@ export const ResetPasswordSchemaForm = () => {
     setError('');
     setSuccess('');
 
-    resetPassword(values).then(data => {
-      setError(data?.error);
-      setSuccess(data?.success);
-    });
+    resetPassword(values)
+      .then(data => {
+        setError(data?.error);
+        setSuccess(data?.success);
+      });
   });
 
   return (

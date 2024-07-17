@@ -32,11 +32,12 @@ export const NewPasswordForm = () => {
   const onSubmit = (values: z.infer<typeof NewPasswordSchema>) => startTransition(() => {
     setError('');
     setSuccess('');
-
-    newPassword(values, token).then(data => {
-      setError(data?.error);
-      setSuccess(data?.success);
-    });
+    
+    newPassword(values, token)
+      .then(data => {
+        setError(data?.error);
+        setSuccess(data?.success);
+      });
   });
 
   return (
